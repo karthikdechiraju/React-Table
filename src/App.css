@@ -1,0 +1,95 @@
+table {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+  background-color: #fafafa;
+  overflow: hidden;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 50px;
+  box-shadow: 0px 0px 5px 0px #00000057;
+}
+
+
+thead {
+  position: relative;
+  display: block;
+  width: 1000px;
+  overflow: visible;
+  color: #8797b5
+}
+
+thead th {
+  background-color: #d1def5;
+  min-width: 110px;
+  height: 50px;
+  /*border: 1px solid #eaeaea;*/
+  padding-left: 10px;
+}
+
+thead th:nth-child(1) {
+  position: relative;
+  text-align: left;
+}
+thead th:nth-child(2) {
+  position: relative;
+  min-width: 180px;
+  text-align: left;
+}
+thead th:nth-child(3){
+  text-align: left;
+}
+.sub_header th{
+  background: #eef3fc;
+  height: 40px;
+}
+
+
+/*tbody*/
+tbody {
+  position: relative;
+  display: block; 
+  width: 1000px;
+  height: 500px;
+  overflow: scroll;
+}
+
+tbody td {
+  min-width: 110px;
+  padding-left: 10px;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
+
+tbody tr:hover > .fixed_data, tbody tr:hover{
+  background: #f1f1f1;
+}
+
+tbody tr td:nth-child(1) {  
+  position: relative;
+  text-align: left;
+  height: 40px;
+  background: #fafafa;
+}
+tbody tr td:nth-child(2) {  
+  position: relative;
+  height: 40px;
+  min-width: 180px;
+  text-align: left;
+  background: #fafafa;
+}
+tbody tr td:nth-child(3){
+  text-align: left;
+}
+
+tbody::-webkit-scrollbar {
+    width: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: #d1def5;
+  border-radius: 10px;
+}
+.border{
+  border-right:1px solid #e2e2e2;
+}
