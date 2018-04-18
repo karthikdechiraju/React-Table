@@ -1,1 +1,1 @@
-This is reactJS component that renders a html table. 
+This is a ReactJS component that renders a html table. 
