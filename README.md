@@ -21,7 +21,7 @@ Inside the project run this command to install dependencies from package.json
 npm install
 ```
 
-Now, we set up the environment for running the project. To run the project, 
+Now, we set up the environment for the project. To run the app, 
 ```
 npm start
 ```
