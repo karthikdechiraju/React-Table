@@ -1,3 +1,5 @@
+## This is a react application that renders a html table.
+
 ##### Steps to run this project
 
 ```
