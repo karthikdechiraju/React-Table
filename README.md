@@ -3,7 +3,7 @@
 ##### Steps to run this project
 
 ```
-npm install create-ract-app -g
+npm install create-react-app -g
 ```
 If you dont have react-scripts installed, run this command
 
@@ -16,12 +16,12 @@ Clone this project or download the zip
 git clone https://github.com/karthikdechiraju/React-Table.git
 ```
 
-Run this command to install dependencies for the project
+Inside the project run this command to install dependencies from package.json
 ```
 npm install
 ```
 
-Now, we set up the environment for running the project. To run the projet
+Now, we set up the environment for running the project. To run the project, 
 ```
 npm start
 ```
