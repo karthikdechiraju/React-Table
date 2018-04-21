@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import '../App.css';
 import Row from './ListComponent.js'
 
@@ -11,26 +10,30 @@ class App extends Component {
             arr.push(i)
         }
     }
+
     
     scrolling_func(){
-        $('thead').css("left", -$("tbody").scrollLeft());
-        $('thead th:nth-child(1)').css("left", $("tbody").scrollLeft()); 
-        $('thead th:nth-child(2)').css("left", $("tbody").scrollLeft()); 
-        $('tbody td:nth-child(1)').css("left", $("tbody").scrollLeft()); 
-        $('tbody td:nth-child(2)').css("left", $("tbody").scrollLeft()); 
+        // destructuring values 
+        let { tbody,thead } = this.refs
+        // head should scroll with body
+        thead.style.left =  - tbody.scrollLeft + 'px'
         
-        // var table = document.querySelector("table");
-        // var tbody = document.querySelector("tbody");
-        // var thead = document.querySelector("thead");
-
-        // thead.style.left = - tbody.scrollLeft + 'px';
-        // first.style.left = tbody.scrollLeft + 'px'; 
-        // for (var i = 0; i < table.rows.length; i++) {
-        //    var firstCol = table.rows[i].cells[0]; 
-        //    var secondCol = table.rows[i].cells[1];
-        //    firstCol.style.left = tbody.scrollLeft + 'px'; 
-        //    secondCol.style.left = tbody.scrollLeft + 'px';
-        // }
+        let td_left = 'translate3d(' + tbody.scrollLeft + 'px,0,0)';
+        // Fix every first td in every tr in tbody 
+        tbody.querySelectorAll('tr > td:first-child')
+          .forEach(function(td) {
+            td.style.transform = td_left;
+          });
+        // Fix every second td in every tr in tbody with class
+        tbody.querySelectorAll('.second')
+        .forEach(function(td) {
+            td.style.transform = td_left;
+        });
+        // Fix every first two th in every tr in thead with class 
+        thead.querySelectorAll('.fixed_head')
+        .forEach(function(td) {
+            td.style.left = tbody.scrollLeft + 'px';
+        });
     }
 
     render_data(){
@@ -40,11 +43,11 @@ class App extends Component {
     render(){
         return(
             <table>
-                <thead>
+                <thead ref="thead">
                   <tr>
-                    <th>OMR ID</th>
-                    <th className="border">Student Name</th>
-                    <th>Campus</th>
+                    <th className="fixed_head">OMR ID</th>
+                    <th className="border fixed_head">Student Name</th>
+                    <th >Campus</th>
                     <th className="border">Section</th>
                     <th colSpan="3" className="border">Physics (120)</th>
                     <th colSpan="3" className="border">Chemistry (120)</th>
@@ -52,8 +55,8 @@ class App extends Component {
                     <th colSpan="3" className="border">Total (360)</th>
                   </tr>
                   <tr className="sub_header">
-                    <th></th>
-                    <th className="border"></th>
+                    <th className="fixed_head"></th>
+                    <th className="border fixed_head"></th>
                     <th></th>
                     <th className="border"></th>
                     <th >Marks</th>
@@ -70,7 +73,7 @@ class App extends Component {
                     <th >AIR</th>
                   </tr>
                 </thead>
-                <tbody onScroll = {() => { this.scrolling_func() }}>
+                <tbody onScroll = {() => { this.scrolling_func() }} ref="tbody">
                   {this.render_data()}
                 </tbody>
               </table>
@@ -79,3 +82,7 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+

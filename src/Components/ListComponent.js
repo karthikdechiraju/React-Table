@@ -5,7 +5,7 @@ class Row extends Component {
 		return(
 			<tr>
 				<td className="fixed_data">10112356</td>
-				<td className="fixed_data border">Karthik Dechiraju</td>
+				<td className="fixed_data border second">Karthik Dechiraju</td>
 				<td>Hyderabad</td>
 				<td className="border">A</td>
 				<td>20</td>
